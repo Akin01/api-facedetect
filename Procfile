@@ -1,0 +1,1 @@
+web: gunicorn tempAPI.wsgi --log-file -
