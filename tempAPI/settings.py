@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ak^%5=12*e0*nj0)1z8a#%5^+x07hx#!glr*)%fl1amsot7r5-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['api-micropro.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -83,6 +84,17 @@ if DEBUG:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd2jq1q0db78nvn',
+        'USER': 'itdstvfkykudiz',
+        'PASSWORD': '975f0dbde3f2868969841437c50dc4fbbdff95fc5c00a582fe4cb8ddb409821f',
+        'HOST': 'ec2-34-193-235-32.compute-1.amazonaws.com',
+        'PORT': '5432'
+    }
+}
 
 
 # Password validation
